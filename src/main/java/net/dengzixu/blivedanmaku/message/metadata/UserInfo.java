@@ -1,8 +1,12 @@
 package net.dengzixu.blivedanmaku.message.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public record UserInfo(Long uid,
                        String username,
+                       @JsonProperty("face_url")
                        String faceURL,
+                       @JsonProperty("fans_medal")
                        FansMedal fansMedal) implements IMetadata {
 
     public UserInfo(long uid,

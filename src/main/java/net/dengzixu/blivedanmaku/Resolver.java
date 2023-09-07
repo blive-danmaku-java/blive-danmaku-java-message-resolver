@@ -61,7 +61,7 @@ public class Resolver {
                  NoSuchMethodException e) {
             logger.error("获取 DataResolver 实例错误", e);
         } catch (IllegalArgumentException e) {
-            logger.warn("找不到对应的Command, {}", e.getMessage());
+            logger.warn("找不到对应的 Command, {}", e.getMessage());
             return new Message<>(rawMessageString, null, MessageEnum.UNKNOWN, null);
 //            throw new UnknownCommandException();
         }

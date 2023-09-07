@@ -1,16 +1,24 @@
 package net.dengzixu.blivedanmaku.message.metadata;
 
-public record FansMedal(Long targetId,
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record FansMedal(@JsonProperty("target_id")
+                        Long targetId,
                         Integer level,
                         String name,
                         Integer color,
+                        @JsonProperty("color_start")
                         Integer colorStart,
+                        @JsonProperty("color_end")
                         Integer colorEnd,
+                        @JsonProperty("color_border")
                         Integer colorBorder,
                         Boolean lighted,
+                        @JsonProperty("guard_level")
                         Integer guardLevel,
                         String special,
                         Integer iconId,
+                        @JsonProperty("anchor_roomid")
                         Long anchorRoomId,
                         Long score) implements IMetadata {
 

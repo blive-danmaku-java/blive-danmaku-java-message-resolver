@@ -1,6 +1,10 @@
 package net.dengzixu.blivedanmaku.message.content;
 
-public record GuardBuyContent(Integer guardLevel, Integer num) implements IMessageContent {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record GuardBuyContent(@JsonProperty("guard_level")
+                              Integer guardLevel,
+                              Integer num) implements IMessageContent {
     @Override
     public String convertToString() {
 

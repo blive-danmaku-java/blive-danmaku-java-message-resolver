@@ -1,9 +1,27 @@
 package net.dengzixu.blivedanmaku.message.content;
 
-public record SendGiftContent(String action, String batchComboId, Object batchComboSend,
-                              String coinType, Integer discountPrice, Long giftId,
-                              String giftName, Integer giftType, Boolean first,
-                              Integer num, Integer price, Long totalCoin) implements IMessageContent {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record SendGiftContent(String action,
+                              @JsonProperty("batch_combo_id")
+                              String batchComboId,
+                              @JsonProperty("batch_combo_send")
+                              Object batchComboSend,
+                              @JsonProperty("coin_type")
+                              String coinType,
+                              @JsonProperty("discount_price")
+                              Integer discountPrice,
+                              @JsonProperty("gift_id")
+                              Long giftId,
+                              @JsonProperty("gift_name")
+                              String giftName,
+                              @JsonProperty("gift_type")
+                              Integer giftType,
+                              Boolean first,
+                              Integer num,
+                              Integer price,
+                              @JsonProperty("total_coin")
+                              Long totalCoin) implements IMessageContent {
 
     /**
      * @param action         操作

@@ -1,10 +1,13 @@
 package net.dengzixu.blivedanmaku.message;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import net.dengzixu.blivedanmaku.enums.MessageEnum;
 import net.dengzixu.blivedanmaku.message.content.IMessageContent;
 import net.dengzixu.blivedanmaku.message.metadata.Metadata;
 
-public record Message<T extends IMessageContent>(String rawMessage,
+public record Message<T extends IMessageContent>(@JsonProperty("raw_message")
+                                                 String rawMessage,
+                                                 @JsonProperty("message_type")
                                                  MessageEnum messageEnum,
                                                  Metadata metadata,
                                                  T content) implements IMessage {
