@@ -15,7 +15,10 @@ public record DanmuContent(@JsonProperty("text")
         }
     }
 
-    public record EmoticonContent(String unique, String url) implements IMessageContent {
+    public record EmoticonContent(@JsonProperty("unique")
+                                  String unique,
+                                  @JsonProperty("url")
+                                  String url) implements IMessageContent {
         @Override
         public String convertToString() {
             return null;
