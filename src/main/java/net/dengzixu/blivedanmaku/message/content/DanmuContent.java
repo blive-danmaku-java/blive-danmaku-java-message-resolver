@@ -2,7 +2,8 @@ package net.dengzixu.blivedanmaku.message.content;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record DanmuContent(String text,
+public record DanmuContent(@JsonProperty("text")
+                           String text,
                            @JsonProperty("emoticon_content")
                            EmoticonContent emoticonContent) implements IMessageContent {
     @Override

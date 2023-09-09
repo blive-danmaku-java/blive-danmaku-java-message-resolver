@@ -2,7 +2,8 @@ package net.dengzixu.blivedanmaku.message.content;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record WatchedChangeContent(Integer num,
+public record WatchedChangeContent(@JsonProperty("num")
+                                   Integer num,
                                    @JsonProperty("text_small")
                                    String textSmall,
                                    @JsonProperty("text_large")

@@ -9,7 +9,9 @@ public record Message<T extends IMessageContent>(@JsonProperty("raw_message")
                                                  String rawMessage,
                                                  @JsonProperty("message_type")
                                                  MessageEnum messageEnum,
+                                                 @JsonProperty("metadata")
                                                  Metadata metadata,
+                                                 @JsonProperty("content")
                                                  T content) implements IMessage {
     public Message(String rawMessage, Metadata metadata, T content) {
         this(rawMessage, MessageEnum.UNKNOWN, metadata, content);

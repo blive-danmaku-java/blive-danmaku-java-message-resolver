@@ -2,7 +2,9 @@ package net.dengzixu.blivedanmaku.message.metadata;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record UserInfo(Long uid,
+public record UserInfo(@JsonProperty("uid")
+                       Long uid,
+                       @JsonProperty("username")
                        String username,
                        @JsonProperty("face_url")
                        String faceURL,

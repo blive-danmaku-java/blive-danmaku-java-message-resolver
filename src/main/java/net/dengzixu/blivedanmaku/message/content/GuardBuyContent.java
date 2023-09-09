@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record GuardBuyContent(@JsonProperty("guard_level")
                               Integer guardLevel,
+                                @JsonProperty("num")
                               Integer num) implements IMessageContent {
     @Override
     public String convertToString() {

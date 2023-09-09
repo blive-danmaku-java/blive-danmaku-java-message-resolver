@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record FansMedal(@JsonProperty("target_id")
                         Long targetId,
+                        @JsonProperty("level")
                         Integer level,
+                        @JsonProperty("name")
                         String name,
+                        @JsonProperty("color")
                         Integer color,
                         @JsonProperty("color_start")
                         Integer colorStart,
@@ -13,13 +16,17 @@ public record FansMedal(@JsonProperty("target_id")
                         Integer colorEnd,
                         @JsonProperty("color_border")
                         Integer colorBorder,
+                        @JsonProperty("lighted")
                         Boolean lighted,
                         @JsonProperty("guard_level")
                         Integer guardLevel,
+                        @JsonProperty("special")
                         String special,
+                        @JsonProperty("icon_id")
                         Integer iconId,
-                        @JsonProperty("anchor_roomid")
+                        @JsonProperty("anchor_room_id")
                         Long anchorRoomId,
+                        @JsonProperty("score")
                         Long score) implements IMetadata {
 
     /**

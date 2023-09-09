@@ -2,7 +2,7 @@ package net.dengzixu.blivedanmaku.message.content;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record SendGiftContent(String action,
+public record SendGiftContent(@JsonProperty("action") String action,
                               @JsonProperty("batch_combo_id")
                               String batchComboId,
                               @JsonProperty("batch_combo_send")
@@ -17,8 +17,11 @@ public record SendGiftContent(String action,
                               String giftName,
                               @JsonProperty("gift_type")
                               Integer giftType,
+                              @JsonProperty("first")
                               Boolean first,
+                              @JsonProperty("num")
                               Integer num,
+                              @JsonProperty("price")
                               Integer price,
                               @JsonProperty("total_coin")
                               Long totalCoin) implements IMessageContent {

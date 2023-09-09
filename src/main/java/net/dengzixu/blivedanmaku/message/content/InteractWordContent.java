@@ -2,7 +2,8 @@ package net.dengzixu.blivedanmaku.message.content;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record InteractWordContent(@JsonProperty("msg_type") Integer msgType) implements IMessageContent {
+public record InteractWordContent(@JsonProperty("msg_type")
+                                  Integer msgType) implements IMessageContent {
     @Override
     public String convertToString() {
         return switch (msgType) {

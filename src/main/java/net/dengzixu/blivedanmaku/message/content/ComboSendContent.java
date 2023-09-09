@@ -2,7 +2,8 @@ package net.dengzixu.blivedanmaku.message.content;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record ComboSendContent(String action,
+public record ComboSendContent(@JsonProperty("action")
+                               String action,
                                @JsonProperty("batch_combo_id")
                                String batchComboId,
                                @JsonProperty("batch_combo_num")

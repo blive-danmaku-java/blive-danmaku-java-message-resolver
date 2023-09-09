@@ -9,6 +9,7 @@ public record Metadata(
         String messageID,
         @JsonProperty("user_info")
         UserInfo userInfo,
+        @JsonProperty("timestamp")
         Long timestamp) implements IMetadata {
 
     public Metadata(Long sendTime,
