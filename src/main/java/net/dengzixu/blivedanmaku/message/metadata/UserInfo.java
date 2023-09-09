@@ -24,7 +24,7 @@ public record UserInfo(@JsonProperty("uid")
 
         stringBuilder.append(String.format("[%s(%s)]", username, uid));
 
-        if (null != fansMedal()) {
+        if (null != fansMedal() && "".equals(fansMedal().name())) {
             stringBuilder.append(" ");
             stringBuilder.append(fansMedal.convertToString());
         }
