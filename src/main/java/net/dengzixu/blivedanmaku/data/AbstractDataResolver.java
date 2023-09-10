@@ -64,7 +64,10 @@ public abstract class AbstractDataResolver<T extends IMessageContent> {
     }
 
     protected FansMedal resolveFansMedal(JsonNode fansMedalNode) {
-        if (fansMedalNode.isEmpty()) {
+        if (null == fansMedalNode
+                || fansMedalNode.isEmpty()
+                || fansMedalNode.hasNonNull("target_id")
+                || fansMedalNode.get("target_id").intValue() == 0) {
             return null;
         }
 
